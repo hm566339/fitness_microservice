@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: configserver
+  profiles:
+    active: native # using local config instead of Git
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/config
+
+server:
+  port: 8888
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
